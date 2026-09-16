@@ -83,13 +83,19 @@ h1 em, h2 em { color: var(--blue); font-style: normal; }
 .section-heading h2, .about h2, .contact h2 { font-size: clamp(3rem, 6vw, 5.4rem); }
 .section-heading > p:last-child { margin: 0 0 4px; color: #56636d; }
 .segment-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-.segment-card { min-height: 380px; display: flex; flex-direction: column; padding: 26px 26px 30px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: white; transition: background .25s ease, color .25s ease, transform .25s ease; }
+.segment-card { min-height: 380px; position: relative; isolation: isolate; overflow: hidden; display: flex; flex-direction: column; padding: 26px 26px 30px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: white; transition: background .25s ease, color .25s ease, transform .25s ease; }
 .segment-card:hover { z-index: 2; color: white; background: var(--navy-800); transform: translateY(-7px); }
+.segment-card::before { content: ""; position: absolute; z-index: -1; top: 42px; left: 10px; right: 10px; height: 242px; background-position: center; background-repeat: no-repeat; background-size: contain; opacity: .2; transition: opacity .25s ease, transform .25s ease; }
+.segment-card:hover::before { opacity: .42; transform: scale(1.04); }
+.nautica-card::before { background-image: url("assets/categoria-nautica-v2.png"); }
+.tools-card::before { background-image: url("assets/categoria-ferramentas-v2.png"); }
+.automotive-card::before { background-image: url("assets/categoria-automotiva-v2.png"); }
+.utilities-card::before { background-image: url("assets/categoria-utilidades-v2.png"); }
 .card-top { display: flex; justify-content: space-between; color: #82909a; font-size: .75rem; font-weight: 800; }
 .segment-card:hover .card-top { color: var(--blue-bright); }
 .card-icon { width: 78px; height: 78px; display: grid; place-items: center; margin: 52px 0 auto; color: var(--blue); border: 1px solid rgba(0,168,232,.32); border-radius: 50%; font-size: 2.3rem; line-height: 1; }
-.segment-card h3 { margin: 32px 0 10px; font-size: 1.28rem; line-height: 1.15; }
-.segment-card p { margin: 0; color: #687681; font-size: .92rem; }
+.segment-card h3 { margin: auto 0 10px; font-size: 1.28rem; line-height: 1.15; }
+.segment-card p { min-height: 4.5em; margin: 0; color: #687681; font-size: .92rem; }
 .segment-card:hover p { color: rgba(255,255,255,.66); }
 
 .about { position: relative; isolation: isolate; overflow: hidden; color: white; background: var(--navy-900); }
@@ -172,6 +178,7 @@ footer { padding: 34px 0; color: rgba(255,255,255,.58); background: var(--navy-9
   .section-heading h2, .about h2, .contact h2 { font-size: clamp(2.7rem, 14vw, 4.2rem); }
   .segment-grid { grid-template-columns: 1fr; }
   .segment-card { min-height: 310px; }
+  .segment-card p { min-height: 0; }
   .card-icon { margin-top: 32px; }
   .about-values { grid-template-columns: 1fr; }
   .store-links, .contact-grid { grid-template-columns: 1fr; }
