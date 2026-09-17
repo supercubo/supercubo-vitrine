@@ -88,7 +88,7 @@ h1 em, h2 em { color: var(--blue); font-style: normal; }
 .segment-card::before { content: ""; position: absolute; z-index: -1; top: 42px; left: 10px; right: 10px; height: 242px; background-position: center; background-repeat: no-repeat; background-size: contain; opacity: .2; transition: opacity .25s ease, transform .25s ease; }
 .segment-card:hover::before { opacity: .42; transform: scale(1.04); }
 .nautica-card::before { background-image: url("assets/categoria-nautica-v2.png"); }
-.tools-card::before { background-image: url("assets/categoria-ferramentas-v2.png"); }
+.tools-card::before { background-image: url("assets/categoria-ferramentas-v3.png"); }
 .automotive-card::before { background-image: url("assets/categoria-automotiva-v2.png"); }
 .utilities-card::before { background-image: url("assets/categoria-utilidades-v2.png"); }
 .card-top { display: flex; justify-content: space-between; color: #82909a; font-size: .75rem; font-weight: 800; }
